@@ -284,7 +284,7 @@ export default function App() {
               Il y a 20 ans, ils se disaient oui. Aujourd'hui, nous voulons les surprendre et célébrer ces deux décennies d'amour, de rires et de famille. 
             </motion.p>
             <motion.p variants={fadeUp} className="text-lg md:text-xl leading-relaxed font-light text-[#4a4a4a]">
-              Mes frères, sœurs et moi-même sommes ravis de vous convier à leur fête d'anniversaire de mariage surprise. Votre présence rendra cette soirée vraiment inoubliable pour eux.
+              Mes frères et moi-même sommes ravis de vous convier à leur fête d'anniversaire de mariage surprise. Votre présence rendra cette soirée vraiment inoubliable pour eux.
             </motion.p>
             <motion.p variants={fadeUp} className="mt-12 font-serif text-2xl italic text-[#8c7326]">
               - Les Enfants
@@ -433,7 +433,7 @@ export default function App() {
               </motion.div>
               <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl mb-6">Une Vidéo Dédicace</motion.h2>
               <motion.p variants={fadeUp} className="text-lg font-light leading-relaxed text-[#4a4a4a] mb-6">
-                Pour rendre cette surprise encore plus magique, nous préparons un montage vidéo qui sera diffusé lors de la soirée.
+                Pour rendre cette surprise encore plus magnifique, nous préparons un montage vidéo qui sera diffusé lors de la soirée.
               </motion.p>
               <motion.p variants={fadeUp} className="text-lg font-light leading-relaxed text-[#4a4a4a] mb-8">
                 Nous vous invitons à filmer un petit message avec votre téléphone (à l'horizontale !), une anecdote amusante ou vos vœux pour eux. 
