@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, FormEvent } from 'react';
 import { motion, useScroll, useTransform, Variants, AnimatePresence } from 'motion/react';
-import { CalendarHeart, MapPin, Clock, Video, Heart, Send, CalendarPlus, X } from 'lucide-react';
+import { CalendarHeart, MapPin, Clock, Video, Heart, Send, CalendarPlus, X, PhoneCall, MessageCircle } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 // Apple-style smooth easing curve
@@ -126,10 +126,18 @@ export default function App() {
   const jaelWhatsappNumber = '243832699494';
   const eventDateLabel = 'Dimanche 8 Mars 2026';
   const eventTimeLabel = '16h00 - 20h30';
-  const eventLocation = "Restaurant Le Mont-Blanc, Quartier Makomeno, en face du Zoo, avenue de la station d'essence Interpetrol";
+  const eventLocationTitle = 'À la maison chez nous';
+  const eventLocationReference = 'Référence: Bureau de River City sur Kiwele';
+  const eventContactWhatsappNumber = '243812221562';
+  const eventContactLabel = '+243812221562';
+  const eventLocation = `${eventLocationTitle}. ${eventLocationReference}. Contact WhatsApp: ${eventContactLabel}`;
   const invitationPhoto = '/1.webp';
   const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Anniversaire+de+Mariage+Surprise&dates=20260308T140000Z/20260308T183000Z&details=Chut...+C'est+une+surprise+!&location=${encodeURIComponent(eventLocation)}&ctz=Africa%2FLubumbashi`;
   const whatsappVideoUrl = `https://wa.me/${jaelWhatsappNumber}?text=${encodeURIComponent("Bonjour Jael, je t'envoie ma vidéo pour la surprise.")}`;
+  const locationWhatsappMessageUrl = `https://wa.me/${eventContactWhatsappNumber}?text=${encodeURIComponent(
+    "Bonjour, je vous contacte pour avoir la localisation exacte de l'evenement.",
+  )}`;
+  const locationWhatsappCallUrl = `whatsapp://call?phone=${eventContactWhatsappNumber}`;
 
   const buildRsvpWhatsappMessage = () => {
     const messageLines = [
@@ -392,8 +400,37 @@ export default function App() {
                 <MapPin className="w-6 h-6 text-[#8c7326]" strokeWidth={1.5} />
               </div>
               <h3 className="font-serif text-2xl mb-3">Le Lieu</h3>
-              <p className="font-light text-[#5a5a5a]">Restaurant Le Mont-Blanc</p>
-              <p className="font-light text-[#5a5a5a] text-sm mt-2">Quartier Makomeno, en face du Zoo<br/>Avenue de la station d'essence Interpetrol</p>
+              <p className="font-light text-[#5a5a5a]">{eventLocationTitle}</p>
+              <p className="font-light text-[#5a5a5a] text-sm mt-2">{eventLocationReference}</p>
+              <p className="font-light text-[#5a5a5a] text-sm mt-2">
+                Contact WhatsApp:{' '}
+                <a
+                  href={locationWhatsappMessageUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-[#d4af37] underline-offset-4 hover:text-[#8c7326] transition-colors"
+                >
+                  {eventContactLabel}
+                </a>
+              </p>
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+                <a
+                  href={locationWhatsappMessageUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#d4af37] px-4 py-2 text-sm text-[#8c7326] hover:bg-[#d4af37] hover:text-white transition-colors"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  Envoyer un message
+                </a>
+                <a
+                  href={locationWhatsappCallUrl}
+                  className="inline-flex items-center gap-2 rounded-full border border-[#d4af37] px-4 py-2 text-sm text-[#8c7326] hover:bg-[#d4af37] hover:text-white transition-colors"
+                >
+                  <PhoneCall className="w-4 h-4" />
+                  Appeler sur WhatsApp
+                </a>
+              </div>
             </motion.div>
           </motion.div>
         </div>
