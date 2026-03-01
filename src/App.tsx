@@ -643,7 +643,7 @@ export default function App() {
                       Que souhaitez-vous boire ?
                     </label>
                     <div className="space-y-3">
-                      {['Bière', 'Boisson sucrée / Soda', 'Jus de fruits'].map((drink) => (
+                      {['Bière', 'Boisson sucrée / Soda'].map((drink) => (
                         <label key={drink} className="flex items-center gap-3 p-3 rounded-xl border border-[#e8e2d2] bg-white cursor-pointer hover:border-[#d4af37] transition-colors">
                           <input 
                             type="radio" 
@@ -686,7 +686,7 @@ export default function App() {
                           Que souhaite boire {partnerName || "l'accompagnant(e)"} ?
                         </label>
                         <div className="space-y-3">
-                          {['Bière', 'Boisson sucrée / Soda', 'Jus de fruits'].map((drink) => (
+                          {['Bière', 'Boisson sucrée / Soda'].map((drink) => (
                             <label key={`partner-${drink}`} className="flex items-center gap-3 p-3 rounded-xl border border-[#e8e2d2] bg-white cursor-pointer hover:border-[#d4af37] transition-colors">
                               <input 
                                 type="radio" 
